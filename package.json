@@ -15,7 +15,7 @@
     "test:unit": "npm run test:unit --workspaces --if-present",
     "test:e2e": "npm run test:e2e --workspaces --if-present",
     "seed:sanity": "npx sanity datasets import ./packages/sanity-schemas/data/seed-cafeteria-aroma.ndjson production --project=8fgufitv --replace",
-    "prepare": "husky"
+    "prepare": "node -e \"if (!process.env.CI && !process.env.VERCEL) require('child_process').execSync('npx --no-install husky', {stdio:'inherit'})\""
   },
   "keywords": [
     "loyalty",
